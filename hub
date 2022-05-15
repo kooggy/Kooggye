@@ -2022,3 +2022,176 @@ credits.Button(
 )
 
 end
+if game.PlaceId == 9300344892 then
+wait(0.2)
+if game.CoreGui:FindFirstChild("Library") then 
+    game.CoreGui["Library"]:Destroy()
+    end
+	local autocollectMain = false;
+	function collecting()
+	spawn(function()
+		while autocollectMain == true do
+			wait(0.8)
+		for _,v in next, game:GetService("Workspace").Maps.City.Interactables:GetDescendants() do 
+			if v.ClassName == "Part" then 
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+			end
+		end
+		if not autocollectMain then break end
+		end
+		end)
+	end
+	local autocollectindustry = false;
+	function collectingindustry()
+	spawn(function()
+		while autocollectindustry == true do
+			wait(0.8)
+		for _,v in next, game:GetService("Workspace").Maps.Industry.Interactables:GetDescendants() do 
+			if v.ClassName == "Part" then 
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+			end
+		end
+		if not autocollectindustry then break end
+		end
+		end)
+	end
+	
+	local autoselltoggle = false; 
+	function selling()
+	spawn(function()
+		while autoselltoggle == true do 
+					wait()
+			game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged:FindFirstChild("Player:Sell"):FireServer()
+	if not autoselltoggle then break end
+		end
+	end)
+	end
+	
+	local autoupgradealltoggle = false; 
+	function upgradingall()
+		spawn(function()
+		while autoupgradealltoggle == true do
+			wait()
+	local args = {
+		[1] = 0
+	}
+	
+	game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged:FindFirstChild("Player:Upgrade"):FireServer(unpack(args))
+	local args = {
+		[1] = 1
+	}
+	
+	game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged:FindFirstChild("Player:Upgrade"):FireServer(unpack(args))
+	local args = {
+		[1] = 2
+	}
+	
+	game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged:FindFirstChild("Player:Upgrade"):FireServer(unpack(args))
+	if not autoupgradealltoggle then break end
+	end
+	end)
+		end
+	
+		local maxsizetoggle = false; 
+		function maxsize()
+			spawn(function()
+				while maxsizetoggle == true do
+					wait()
+					local args = {
+						[1] = 1
+					}
+					
+					game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged:FindFirstChild("Player:Upgrade"):FireServer(unpack(args)) 
+					if not maxsizetoggle then break end
+			end
+			end)
+		end
+		local sellvaluetoggle = false; 
+		function sellvalue()
+			spawn(function()
+				while sellvaluetoggle == true do 
+					wait()
+					local args = {
+						[1] = 0
+					}
+					
+					game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged:FindFirstChild("Player:Upgrade"):FireServer(unpack(args)) 
+					if not sellvaluetoggle then break end
+			end 
+			end)
+		end
+	
+		local speedtoggle = false; 
+		function speed()
+			spawn(function()
+			while speedtoggle == true do 
+				wait()
+				local args = {
+					[1] = 2
+				}
+				
+				game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged:FindFirstChild("Player:Upgrade"):FireServer(unpack(args)) 
+				if not speedtoggle then break end 
+			end
+		end)
+	end  
+	local VLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/vep1032/VepStuff/main/VL"))()
+
+local s = VLib:Window("KOOGGY HUB", "TORNADO SIM", "KH")
+local farm = s:Tab("Auto Farm")
+local upgr = s:Tab("Auto Upgrade")
+
+farm:Label("Auto Collection")
+farm:Toggle("Auto Collect Main Area",function(state)
+	autocollectMain = state;
+	if autocollectMain then 
+		collecting()
+	end
+    end)
+
+	farm:Toggle("Auto Collect Industry Area",function(state)
+		autocollectindustry = state;
+		if autocollectindustry then 
+			collectingindustry()
+		end
+			end)
+			farm:Label("Auto Selling")
+			farm:Toggle("Auto Sell",function(state)
+				autoselltoggle = state;
+				if autoselltoggle then
+					selling()
+				end
+					end)
+				
+
+			upgr:Toggle("Auto Upgrade Max Size",function(state)
+				maxsizetoggle = state;
+				if maxsizetoggle then 
+					maxsize()
+				end
+					end)
+				
+		
+					upgr:Toggle("Auto Upgrade Sell Value",function(state)
+						sellvaluetoggle = state;
+						if sellvaluetoggle then
+							sellvalue()
+						end
+							end)
+						
+				
+							upgr:Toggle("Auto Upgrade Speed",function(state)
+								speedtoggle = state;
+								if speedtoggle then
+									speed()
+								end
+									end)
+								
+						
+									upgr:Toggle("Auto Upgrade All",function(state)
+										autoupgradealltoggle = state;
+										if autoupgradealltoggle then
+											upgradingall()
+										end
+											end)
+										end
