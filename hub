@@ -2031,7 +2031,7 @@ if game.CoreGui:FindFirstChild("Library") then
 	function collecting()
 	spawn(function()
 		while autocollectMain == true do
-			wait(0.2)
+			wait(0.6)
 		for _,v in next, game:GetService("Workspace").Maps.City.Interactables:GetDescendants() do 
 			if v.ClassName == "Part" then 
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
@@ -2045,7 +2045,7 @@ if game.CoreGui:FindFirstChild("Library") then
 	function collectingindustry()
 	spawn(function()
 		while autocollectindustry == true do
-			wait(0.2)
+			wait(0.6)
 		for _,v in next, game:GetService("Workspace").Maps.Industry.Interactables:GetDescendants() do 
 			if v.ClassName == "Part" then 
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
