@@ -1,3 +1,4 @@
+
 local keys = {
     "58FS2LCSKh6FpI9",
     "GOdjJwrSXll6v70",
@@ -21,8 +22,7 @@ for i,v in pairs(keys) do
 
     else
         if v == _G.Key then
-
-wait()
+           wait()
 if game.PlaceId == 3102144307 then
  if game.CoreGui:FindFirstChild("Anime Clicker Simulator") then
     game.CoreGui["Anime Clicker Simulator"]:Destroy()
@@ -2055,7 +2055,7 @@ if game.CoreGui:FindFirstChild("Library") then
 	function collecting()
 	spawn(function()
 		while autocollectMain == true do
-			wait(0.2
+			wait(0.2)
 		for _,v in next, game:GetService("Workspace").Maps.City.Interactables:GetDescendants() do 
 			if v.ClassName == "Part" then 
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
@@ -2069,7 +2069,7 @@ if game.CoreGui:FindFirstChild("Library") then
 	function collectingindustry()
 	spawn(function()
 		while autocollectindustry == true do
-			wait(0.2
+			wait(0.2)
 		for _,v in next, game:GetService("Workspace").Maps.Industry.Interactables:GetDescendants() do 
 			if v.ClassName == "Part" then 
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
@@ -2219,8 +2219,7 @@ farm:Toggle("Auto Collect Main Area",function(state)
 										end
 											end)
 										end
-    game:GetService("StarterGui"):SetCore("SendNotification",{Title="Kooggy Hub",Text="Kooggy Hub successfully loaded",Duration=15})
-
+            game:GetService("StarterGui"):SetCore("SendNotification",{Title="Correct Key",Text="Kooggy Hub successfully loaded",Duration=15})
             keyCheck = _G.Key
             keys = ""
         else
@@ -2229,12 +2228,10 @@ farm:Toggle("Auto Collect Main Area",function(state)
     end
 end
 
-while true do
+
     if _G.Key == keyCheck then
         --Not spoofed
     else
-            game:GetService("StarterGui"):SetCore("SendNotification",{Title="Kooggy Hub",Text="Incorrect Key! Copied key link to clipboard.",Duration=5})
-    setclipboard("https://link-target.net/374506/link-to-get-key")
+ game:GetService("StarterGui"):SetCore("SendNotification",{Title="Kooggy Hub",Text="Incorrect Key! Copied Key link to clipboard",Duration=15})
+ setclipboard("https://link-target.net/374506/link-to-get-key")
     end
-    wait()
-end
