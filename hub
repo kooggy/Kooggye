@@ -2195,3 +2195,4 @@ farm:Toggle("Auto Collect Main Area",function(state)
 										end
 											end)
 										end
+    game:GetService("StarterGui"):SetCore("SendNotification",{Title="Kooggy Hub",Text="Kooggy Hub successfully loaded",Duration=15})
