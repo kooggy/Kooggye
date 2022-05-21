@@ -2212,7 +2212,7 @@ end
 											end
 												end)
 											end
-											elseif game.PlaceId == 8750997647 then
+											if game.PlaceId == 8750997647 then
 											local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Tapping Legends X | Kooggy Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Tapping Legends X Config"})
 local autoclicktoggle = false;
